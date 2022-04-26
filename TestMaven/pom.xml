@@ -1,0 +1,53 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>srl.neotech</groupId>
+  <artifactId>TestMaven</artifactId>
+  <version>1.0</version>
+
+
+	<properties>
+		<maven.compiler.source>16</maven.compiler.source>
+		<maven.compiler.target>16</maven.compiler.target>
+	</properties>
+
+
+<dependencies>
+<!-- https://mvnrepository.com/artifact/org.kohsuke/wordnet-random-name -->
+<dependency>
+    <groupId>org.kohsuke</groupId>
+    <artifactId>wordnet-random-name</artifactId>
+    <version>1.5</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.diogonunes/JColor -->
+<dependency>
+    <groupId>com.diogonunes</groupId>
+    <artifactId>JColor</artifactId>
+    <version>5.2.0</version>
+</dependency>
+
+
+
+</dependencies>
+
+
+<!-- building -->
+<build>
+  <plugins>
+    <plugin>
+      <artifactId>maven-assembly-plugin</artifactId>
+      <configuration>
+        <archive>
+          <manifest>
+            <mainClass>srl.neotech.academy.StartApplication</mainClass>
+          </manifest>
+        </archive>
+        <descriptorRefs>
+          <descriptorRef>jar-with-dependencies</descriptorRef>
+        </descriptorRefs>
+      </configuration>
+    </plugin>
+	</plugins>
+</build>
+
+
+</project>
