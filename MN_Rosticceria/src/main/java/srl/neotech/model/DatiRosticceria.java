@@ -2,6 +2,8 @@ package srl.neotech.model;
 
 import java.util.ArrayList;
 
+
+
 public class DatiRosticceria {
 
 	
