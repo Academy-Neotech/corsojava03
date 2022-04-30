@@ -1,0 +1,18 @@
+package srl.neotech.model;
+
+public enum TipoGenere {
+
+	ADULTI,
+	HORROR,
+	FANTASY,
+	DRAMMATICO,
+	COMMEDIA,
+	THRILLER,
+	GIALLO,
+	ROMANTICO,
+	CRIME,
+	ACTION,
+	AVVENTURA,
+	CINEPANETTONE;
+	
+}
