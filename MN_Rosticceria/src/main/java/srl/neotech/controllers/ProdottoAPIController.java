@@ -1,5 +1,8 @@
 package srl.neotech.controllers;
 
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +20,8 @@ import srl.neotech.services.ProdottoService;
 @RestController
 public class ProdottoAPIController {
 
+	private static final Logger logger = LogManager.getLogger(ProdottoAPIController.class);
+	
 	@Autowired
 	ProdottoService prodottoService;
 	
@@ -44,6 +49,10 @@ public class ProdottoAPIController {
 	@GetMapping(value = "/api/getListaProdotti",produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseListaProdotti getListaProdotti() {
 		ResponseListaProdotti response=new ResponseListaProdotti();
+		
+		logger.info("Questo è un info");
+		logger.debug("Questo è un debug");
+		logger.error("Questo è un error");
 		   
 		try {
 			response.setProdotti(prodottoService.getListaProdotti());
