@@ -1,0 +1,27 @@
+package srl.neotech.streams.api;
+
+import java.nio.file.Paths;
+import java.util.List;
+import java.nio.file.Files;
+import java.util.stream.Stream;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		// Stream API 01 --begin--	
+		try {
+			Stream<String> stream=Files.lines(Paths.get("name01.txt"));
+			System.out.println(stream.count());
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		// Stream API 01 --end--	
+		
+	}
+
+}

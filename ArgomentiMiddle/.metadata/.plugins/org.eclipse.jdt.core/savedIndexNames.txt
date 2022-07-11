@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+C:\Max\wkspaces\ArgomentiMiddle\.metadata\.plugins\org.eclipse.jdt.core
+3413725848.index
+3470231508.index
+290998306.index
+1865797976.index

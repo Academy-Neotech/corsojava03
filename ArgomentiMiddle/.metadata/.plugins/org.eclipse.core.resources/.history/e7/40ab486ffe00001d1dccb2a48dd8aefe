@@ -1,0 +1,78 @@
+package srl.neotech.streams.data;
+
+import java.io.ByteArrayInputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//File Stream 01--begin--
+		try {
+			FileInputStream fis=new FileInputStream("img01.jpg");
+	       
+		   int i = fis.read();
+	       while(i != -1) {
+	           System.out.print((char)i);
+	           i = fis.read();
+	        }
+	       fis.close();
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//File Stream 01 --end--
+		//File Stream 02--begin--
+				try {
+					FileInputStream fis=new FileInputStream("img01.jpg");
+			        ByteArrayInputStream bais=new ByteArrayInputStream(fis.readAllBytes());
+				    bais.transferTo(new FileOutputStream("img02.jpg"));
+				    bais.close();
+					
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		//File Stream 02 --end--
+		//File Stream 03--begin--
+				try {
+					FileInputStream fis=new FileInputStream("img01.jpg");
+					byte[] dati = new byte[fis.available()];
+					fis.read(dati);
+					dati[2300]=0;
+					dati[2301]=0;
+					dati[2302]=0;
+					FileOutputStream fos=new FileOutputStream("img04.jpg");
+					fos.write(dati);
+			        fos.close();
+			        fis.close();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		//File Stream 03 --end--		
+		//File Stream 04--begin--
+				try {
+					FileInputStream fis=new FileInputStream("img01.jpg");
+					byte[] dati = new byte[fis.available()];
+					fis.read(dati);
+					dati[2300]=0;
+					dati[2301]=0;
+					dati[2302]=0;
+					FileOutputStream fos=new FileOutputStream("img04.jpg");
+					fos.write(dati);
+			        fos.close();
+			        fis.close();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		//File Stream 04 --end--		
+		
+	}
+
+}
