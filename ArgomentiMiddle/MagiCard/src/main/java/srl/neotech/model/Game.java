@@ -1,6 +1,9 @@
 package srl.neotech.model;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Game {
 	
@@ -12,11 +15,11 @@ public class Game {
 	private Player remotePlayer;
 	private ArrayList<Card> fullDeck;
 	private Status status;
+	private static Stream messageStream;
 
 	
 	private Game() {
 		generateFullDeck();
-		
 	}
 	
 	
@@ -27,7 +30,25 @@ public class Game {
 
 	private void generateFullDeck(){
 		fullDeck=new ArrayList<Card>();
-		//generate Deck.....
+		Card witcher=new Card();
+		witcher.setCardId("witcher");
+		witcher.setAttacco(9);
+		witcher.setStamina(140);
+		witcher.setImgPath("/img/witcher.jpg");
+		fullDeck.add(witcher);
+		
+		
+		
+		
+	}
+	
+	
+	
+	public static <T> Stream<T> insertInStream( T elem, int index) {
+	    @SuppressWarnings("unchecked")
+		List<T> result = (List<T>) messageStream.collect(Collectors.toList());
+	    result.add(index, elem);
+	    return result.stream();
 	}
 
 	

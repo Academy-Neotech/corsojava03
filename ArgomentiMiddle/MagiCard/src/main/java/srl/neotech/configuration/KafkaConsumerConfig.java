@@ -15,6 +15,8 @@ import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 
+import srl.neotech.model.Game;
+
 @EnableKafka
 @Configuration
 public class KafkaConsumerConfig {
@@ -47,6 +49,10 @@ public class KafkaConsumerConfig {
     @KafkaListener(topics = "${message.topic.name}", groupId = "group-01")
     public void listenGroup(String message) {
         System.out.println("Received Message: " + message);
+        Game.insertInStream(message, 0);        
         latch.countDown();
+        
+        
+        
     }
 }
